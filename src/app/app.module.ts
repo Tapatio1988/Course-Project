@@ -11,40 +11,45 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { ContactsDetailComponent } from './contacts-detail/contacts-detail.component';
 import { ContactsCreateComponent } from './contacts-create/contacts-create.component';
 import { ContactsEditComponent } from './contacts-edit/contacts-edit.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import {
   MatInputModule,
+  MatPaginatorModule,
+  MatProgressSpinnerModule,
+  MatSortModule,
   MatTableModule,
   MatIconModule,
   MatButtonModule,
   MatCardModule,
+  MatFormFieldModule,
 } from '@angular/material';
 
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   {
-    path: 'Contacts',
+    path: 'contacts',
     component: ContactsComponent,
     data: { title: 'Contacts List' },
   },
   {
-    path: 'Contacts-detail/:id',
+    path: 'contacts-detail/:id',
     component: ContactsDetailComponent,
     data: { title: 'Contacts Details' },
   },
   {
-    path: 'Contacts-create',
+    path: 'contacts-create',
     component: ContactsCreateComponent,
     data: { title: 'Create Contacts' },
-  
   },
   {
-    path: 'Contacts-edit/:id',
+    path: 'contacts-edit/:id',
     component: ContactsEditComponent,
     data: {title: 'Edit Boards' },
   },
-  { path: '', redirectTo: '/Contacts', pathMatch: 'full' },
+  { path: '', redirectTo: '/contacts', pathMatch: 'full' },
 ]
 
 @NgModule({
@@ -67,6 +72,12 @@ const appRoutes: Routes = [
     MatIconModule,
     MatButtonModule,
     MatCardModule,
+    FormsModule,
+    MatPaginatorModule,
+    MatProgressSpinnerModule,
+    MatFormFieldModule,
+    MatSortModule,
+    MatFormFieldModule,
 
   ],
   providers: [],

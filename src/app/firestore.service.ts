@@ -7,9 +7,9 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/fire
 
 export interface Contact {
   id?: string
-  author: string
-  description: string
-  title: string
+  Phone: string
+  Email: string
+  Name: string
 }
 
 @Injectable({
@@ -18,9 +18,9 @@ export interface Contact {
 export class FirestoreService {
     private contactCollection: AngularFirestoreCollection<Contact>
 
-  constructor(private afs: AngularFirestore) {
-    this.contactCollection = afs.collection<Contact>('Contacts')
-  }
+    constructor(private afs: AngularFirestore) {
+      this.contactCollection = afs.collection<Contact>('contacts')
+    }
 
   getContacts(): Observable<Contact[]> {
     return this.contactCollection.snapshotChanges().pipe(
@@ -29,7 +29,8 @@ export class FirestoreService {
           const data = a.payload.doc.data()
           const id = a.payload.doc.id
           return { id, ...data }
-        }))
+        }),
+        ),
     )
   }
 
