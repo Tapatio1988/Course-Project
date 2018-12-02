@@ -12,6 +12,15 @@ import { ContactsDetailComponent } from './contacts-detail/contacts-detail.compo
 import { ContactsCreateComponent } from './contacts-create/contacts-create.component';
 import { ContactsEditComponent } from './contacts-edit/contacts-edit.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  MatInputModule,
+  MatTableModule,
+  MatIconModule,
+  MatButtonModule,
+  MatCardModule,
+} from '@angular/material';
+
+import { ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   {
@@ -52,6 +61,13 @@ const appRoutes: Routes = [
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatTableModule,
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
